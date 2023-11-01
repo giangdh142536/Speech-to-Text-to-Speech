@@ -56,9 +56,9 @@ const upload = multer({ storage });
 const app = express();
 
 const http = require('http').Server(app);
-const io = require('socket.io')(https);
+const io = require('socket.io')(http);
 
-const port = process.env.PORT || 443;
+const port = process.env.PORT || 80;
 
 io.on('connection', (socket) => {
   console.log('user connected');
